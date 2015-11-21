@@ -4,7 +4,6 @@
 angular.module('angular-animatecss-aruis', [])
     .directive('animate', function () {
         return {
-            restrict: 'A',
             link: function (scope, element, attrs) {
                 var animatedClass = 'animated ' + attrs.animate;
                 var isInfinite = attrs.hasOwnProperty('animateInfinite')
@@ -17,7 +16,6 @@ angular.module('angular-animatecss-aruis', [])
                 if (!isInfinite) {
                     element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
                         element.removeClass(animatedClass);
-                        console.log('dd')
                     });
                 }
 
